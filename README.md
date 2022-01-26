@@ -14,4 +14,4 @@ Generate thumbnail images from video files that are fetched from a MySQL databas
 ### Contributors
 
 1. [Jumanazar Said](https://github.com/jsr1611)
-2. [Ali A. Al-Hamid](mailto:alihamid@cbnu.ac.kr)
+2. [Ali A. Al-Hamid](https://github.com/engalihamid)
