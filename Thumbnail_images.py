@@ -21,8 +21,8 @@ img_path = ''
 def generate_thumbnail(video_path):
     global folder_name, img_path
     try:
-        vidcap = cv2.VideoCapture(video_path)
-        success, image = vidcap.read()
+        video_captured = cv2.VideoCapture(video_path)
+        success, image = video_captured.read()
         # for i in range(1):
         width = int(image.shape[1] * 0.4)
         height = int(image.shape[0] * 0.4)
@@ -56,13 +56,15 @@ def main():
 
         for data in results:
             # print(data)
+            # change below data according to your needs
             lesson_id = data[5]
             course_id = data[4]
             video_link = data[3]
-            folder_name = str(course_id)
-            img_path = str(lesson_id) + ".jpg"
+            folder_name = str(course_id)        # set folder name dynamically
+            img_path = str(lesson_id) + ".jpg"  # set image path dynamically
             if not os.path.exists(folder_name + '/' + img_path):
-                # print('courseId: ' + str(course_id) + ', lesson_index: ' + str(lesson_id) + ', videoLink: ' + video_link)
+                # print('courseId: ' + str(course_id) + ', lesson_index: ' +
+                # str(lesson_id) + ', videoLink: ' + video_link)
                 result_text = generate_thumbnail(video_link)
                 print(result_text)
             else:
